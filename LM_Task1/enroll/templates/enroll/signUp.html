@@ -1,0 +1,82 @@
+{% extends "enroll/base.html" %}
+{% block title %}User Registration{% endblock %}
+{% block header %}{% endblock %}
+{% block content %}
+    <style>
+
+        .form-wrapper {
+            height: 1000px; /* Set the desired height for the scrollable area */
+            overflow-y: auto; /* Enable vertical scrollbar when content overflows */
+            margin: auto;
+            padding-top: 50px; /* Add some padding at the top */
+
+        }
+        .form-group input:focus,
+          .form-group select:focus {
+            outline: none;
+            border-color: #80bdff;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 300px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.2s ease-in-out;
+        }
+
+        .form-container {
+            max-width: 500px; /* Add a max-width property to limit the width of the container */
+            margin: 0 auto;
+            padding: 100px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .form-group label {
+            font-weight: bold;
+        }
+                       body {
+            /* Set a colorful background gradient */
+            background: linear-gradient(135deg, #ff8080, #80ff80, #8080ff, #ff80ff);
+            background-size: 600% 600%;
+            animation: gradient 15s ease infinite;
+        }
+
+
+    </style>
+    <div class="form-wrapper">
+     <div class="form-container">
+    <h2 class="registration-title">User Registration</h2>
+        <form action="" method="POST" novalidate>
+            {% csrf_token %}
+        {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+        <p class="er">{{ error }}</p>
+    {% endfor %}
+{% endif %}
+            {% for fm in form %}
+                <div class="form-group">
+                    {{ fm.label_tag }}
+                    {{ fm }}
+                    <small class="error">{{ fm.errors|striptags }}</small>
+                </div>
+            {% endfor %}
+            <input type="submit" class="btn btn-primary" value="Submit">
+        </form>
+    <p>
+        {% if messages %}
+            {% for message in messages %}
+                <small {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</small>
+            {% endfor %}
+        {% endif %}
+    </p>
+        <p>Already have an account? <a href="{% url 'login'%}">Login</a></p>
+    </div>
+    </div>
+{% endblock %}

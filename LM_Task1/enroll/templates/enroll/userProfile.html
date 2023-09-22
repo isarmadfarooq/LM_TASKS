@@ -1,0 +1,34 @@
+{% extends "enroll/base.html" %}
+{% block title %}My amazing blog{% endblock %}
+
+{% block content %}
+<h1>Edit Profile Page</h1>
+<h3>Welcome {{ name }}</h3>
+   <p>{% if messages %}
+        {% for message in messages %}
+            <small {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</small>
+        {% endfor %}
+    {% endif %}
+   </p>
+
+   <form action="" method="POST" novalidate>
+
+       {% csrf_token %}
+
+       {% if form.non_field_errors %}
+
+           {% for error in form.non_field_errors %}
+              <p>>{{ error}}</p>
+           {% endfor %}
+
+       {% endif %}
+
+       {% for fm in user_form %}
+            {{ fm.label_tag }} {{ fm }} {{ fm.errors|striptags }}<br><br>
+       {% endfor %}
+
+   <input type="submit" value="save">
+
+   </form>
+
+{% endblock %}
