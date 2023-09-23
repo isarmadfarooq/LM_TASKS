@@ -1,0 +1,3 @@
+[flake8]
+max-line-length=140
+exclude = __pychache__, migrations, __init__, apps.py, tests.py,djangoauthapi1, myenv, manage.py
