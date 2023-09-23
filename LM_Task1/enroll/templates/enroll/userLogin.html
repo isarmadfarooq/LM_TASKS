@@ -1,0 +1,47 @@
+{% extends "enroll/base.html" %}
+{% block title %}User Login{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+    <style>
+                   body {
+            /* Set a colorful background gradient */
+            background: linear-gradient(135deg, #ff8080, #80ff80, #8080ff, #ff80ff);
+            background-size: 600% 600%;
+            animation: gradient 15s ease infinite;
+        }
+
+    </style>
+    <div class="form-wrapper">
+            <div class="form-container">
+        <h2 class="registration-title">User Login</h2>
+        <form action="" method="POST" novalidate>
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                    <p class="er">{{ error }}</p>
+                {% endfor %}
+            {% endif %}
+            {% for fm in form %}
+                <div class="form-group">
+                    {{ fm.label_tag }}
+                    {{ fm }}
+                    <small class="error">{{ fm.errors|striptags }}</small>
+                </div>
+            {% endfor %}
+            <input type="submit" class="btn-primary" value="Login">
+        </form>
+        <p>
+            {% if messages %}
+                {% for message in messages %}
+                    <small {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</small>
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>Don't have an account? <a href="{% url 'signUp'%}">Sign up</a></p>
+{#      <p>Forgot password? </p><a href="/changepass">Change Password</a>#}
+
+    </div>
+    </div>
+{% endblock %}
