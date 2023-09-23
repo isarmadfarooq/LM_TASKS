@@ -1,0 +1,3 @@
+[flake8]
+max-line-length=140
+exclude = customUserAuth, migrations, templates, __init__, apps, tests,user_logs.txt, user_logs.txtfile,myenv,manage.py
