@@ -1,0 +1,3 @@
+[flake8]
+max-line-length=120
+exclude = __pychache__, __init__, .vscode, conjobs, migrations, logs, myenv, manage.py
