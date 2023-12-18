@@ -104,3 +104,12 @@
 2023-09-22 10:53:33 - User: i.sarmad@gmail.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/profile/ 
 2023-09-22 10:53:38 - User: i.sarmad@gmail.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/profile/ 
 2023-09-22 10:53:39 - User: i.sarmad@gmail.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/profile/ 
+2023-12-18 07:40:55 - User: example@email.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/profile/ 
+2023-12-18 07:41:39 - User: example@email.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/profile/ 
+2023-12-18 07:45:10 - User: example@email.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/profile/ 
+2023-12-18 07:47:56 - User: example@email.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/profile/ 
+2023-12-18 07:48:21 - User: example@email.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/userlist/ 
+2023-12-18 07:49:48 - User: example@email.com - IP: 127.0.0.1 - Method: GET - Path: /api/userlist/ 
+2023-12-18 07:50:04 - User: example@email.com - IP: 127.0.0.1 - Method: GET - Path: /api/userlist/ 
+2023-12-18 07:50:51 - User: example@email.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/userlist/ 
+2023-12-18 07:51:28 - User: example@email.com - IP: 127.0.0.1 - Method: GET - Path: /api/user/userlist/ 
